@@ -47,8 +47,9 @@ export function DomainList({ initialDomains }: DomainListProps) {
 
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left">
-          <thead className="text-xs uppercase bg-gray-50">
+          <thead className="text-xs uppercase bg-zinc-50">
             <tr>
+              <th scope="col" className="px-4 py-2"></th>
               <th scope="col" className="px-4 py-2">Domain</th>
               <th scope="col" className="px-4 py-2">Status</th>
               <th scope="col" className="px-4 py-2">TLD</th>
@@ -63,8 +64,9 @@ export function DomainList({ initialDomains }: DomainListProps) {
           </thead>
           <tbody>
             {filteredDomains.length > 0 ? (
-              filteredDomains.map((domain: Domain) => (
-                <tr key={domain.domain} className="bg-white border-b hover:bg-gray-50">
+              filteredDomains.map((domain: Domain, i: number) => (
+                <tr key={domain.domain} className="bg-white border-b hover:bg-zinc-50 group">
+                  <td className="bg-zinc-50 text-zinc-400 font-mono font-bold px-1.5 text-right group-hover:text-zinc-900">{i}</td>
                   <td className="px-4 py-2 font-semibold"><Link href={`/${domain.domain}`}>{domain.domain}</Link></td>
                   <td className="px-4 py-2">{domain.status}</td>
                   <td className="px-4 py-2">{domain.tld}</td>
