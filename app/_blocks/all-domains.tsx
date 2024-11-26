@@ -15,7 +15,8 @@ export default async function AllDomains() {
         },
         body: JSON.stringify({
           apikey: process.env.PORKBUN_API_KEY,
-          secretapikey: process.env.PORKBUN_SECRET_KEY
+          secretapikey: process.env.PORKBUN_SECRET_KEY,
+          includeLabels: "yes"
         }),
         cache: 'force-cache'
       });
