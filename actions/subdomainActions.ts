@@ -1,7 +1,7 @@
 "use server";
 
-import { db } from "@/app/db";
-import { Subdomains, UserDomains } from "@/app/db/schema";
+import { db } from "@/db";
+import { Subdomains, UserDomains } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 
 /**

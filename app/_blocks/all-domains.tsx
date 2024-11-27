@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { db } from "@/db";
+import { Subdomains } from "@/db/schema";
 import { Domain } from "@/types/domain";
 import { Subdomain } from "@/types/subdomain";
 import { auth } from "@clerk/nextjs/server";
 import { asc, eq } from "drizzle-orm";
 import Link from "next/link";
-import { db } from "../db";
-import { Subdomains } from "../db/schema";
 import { DomainList } from "./domain-list";
 import { SubdomainsList } from "./subdomains-list";
 
