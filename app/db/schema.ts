@@ -12,4 +12,5 @@ export const Subdomains = pgTable('subdomains', {
   owner_id: text('owner_id').notNull(),
   domain: text('domain').notNull().references(() => UserDomains.domain),
   description: text('description'),
+  host: text('host'),
 });
