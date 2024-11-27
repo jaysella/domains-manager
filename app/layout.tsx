@@ -1,5 +1,6 @@
 import {
   ClerkProvider,
+  RedirectToSignIn,
   SignedIn,
   SignedOut,
   SignInButton,
@@ -49,7 +50,13 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
-          {children}
+          <SignedIn>{children}</SignedIn>
+          <SignedOut>
+            <div className="flex items-center justify-center h-screen">
+              Please sign in to continue
+            </div>
+            <RedirectToSignIn />
+          </SignedOut>
         </body>
       </html>
     </ClerkProvider>
