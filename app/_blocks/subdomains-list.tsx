@@ -1,6 +1,7 @@
 "use client";
 
-import { updateSubdomain } from "@/actions/subdomainActions";
+import { deleteSubdomain, updateSubdomain } from "@/actions/subdomainActions";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -12,7 +13,7 @@ import {
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 import { Subdomain } from "@/types/subdomain";
-import { ExternalLinkIcon } from "lucide-react";
+import { ExternalLinkIcon, TrashIcon } from "lucide-react";
 import React from "react";
 
 export function SubdomainsList({ subdomains }: { subdomains: Subdomain[] }) {
@@ -90,6 +91,7 @@ export function SubdomainsList({ subdomains }: { subdomains: Subdomain[] }) {
           <TableHead scope="col" className="w-full">
             Description
           </TableHead>
+          <TableHead scope="col"></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -169,6 +171,29 @@ export function SubdomainsList({ subdomains }: { subdomains: Subdomain[] }) {
                   </TableCell>
                 </React.Fragment>
               ))}
+
+              <TableCell>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="size-6"
+                  onClick={() => {
+                    deleteSubdomain(
+                      subdomain.subdomain,
+                      subdomain.domain,
+                      subdomain.owner_id
+                    );
+
+                    setData((prevData) =>
+                      prevData.filter(
+                        (item) => item.subdomain !== subdomain.subdomain
+                      )
+                    );
+                  }}
+                >
+                  <TrashIcon className="!size-3" />
+                </Button>
+              </TableCell>
             </TableRow>
           ))
         ) : (

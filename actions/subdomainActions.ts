@@ -42,3 +42,13 @@ export const updateSubdomain = async (subdomain: string, domain: string, owner_i
     host: host,
   }).where(and(eq(Subdomains.subdomain, subdomain), eq(Subdomains.domain, domain)));
 };
+
+/**
+ * Delete a subdomain
+ * @param {string} subdomain - The subdomain to delete
+ * @param {string} domain - The domain to delete the subdomain from
+ * @param {string} owner_id - The owner ID of the subdomain
+ */
+export const deleteSubdomain = async (subdomain: string, domain: string, owner_id: string) => {
+  await db.delete(Subdomains).where(and(eq(Subdomains.subdomain, subdomain), eq(Subdomains.domain, domain)));
+};
