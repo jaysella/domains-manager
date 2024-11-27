@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1732672393013,
-      "tag": "0000_chief_jackpot",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1732672812064,
-      "tag": "0001_equal_cerebro",
+      "when": 1732674648562,
+      "tag": "0000_charming_komodo",
       "breakpoints": true
     }
   ]

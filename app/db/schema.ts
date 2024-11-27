@@ -1,9 +1,8 @@
 import { pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const UserDomains = pgTable('user_domains', {
-  // This will be the user ID provided by Clerk
-  user_id: text('user_id').primaryKey(),
-  domain: text('domain').notNull(),
+  domain: text('domain').primaryKey(),
+  user_id: text('user_id').notNull(),
   source: text('source').notNull().default('manual'), // 'auto' or 'manual'
   createTs: timestamp('create_ts').defaultNow().notNull()
 });
