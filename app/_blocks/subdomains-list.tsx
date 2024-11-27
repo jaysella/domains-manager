@@ -74,8 +74,8 @@ export function SubdomainsList({ subdomains }: { subdomains: Subdomain[] }) {
   }, [editingCell]);
 
   return (
-    <Table className="text-sm text-left border">
-      <TableHeader className="text-xs uppercase bg-zinc-50">
+    <Table>
+      <TableHeader>
         <TableRow>
           <TableHead scope="col"></TableHead>
           <TableHead scope="col" className="w-40">
@@ -95,8 +95,8 @@ export function SubdomainsList({ subdomains }: { subdomains: Subdomain[] }) {
       <TableBody>
         {data.length > 0 ? (
           data.map((subdomain: Subdomain, i: number) => (
-            <TableRow key={subdomain.subdomain}>
-              <TableCell className="bg-zinc-50 text-zinc-400 font-mono font-bold px-1.5 text-right group-hover:text-zinc-900 border-r">
+            <TableRow key={subdomain.subdomain} className="group">
+              <TableCell className="bg-zinc-50 text-zinc-400 font-mono font-bold px-1.5 text-right group-hover:text-zinc-900 border-r transition-colors">
                 {i}
               </TableCell>
 

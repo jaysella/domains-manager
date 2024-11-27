@@ -55,8 +55,8 @@ export function DomainList({ initialDomains }: DomainListProps) {
       </div>
 
       <div className="relative overflow-x-auto">
-        <Table className="text-sm text-left border">
-          <TableHeader className="text-xs uppercase bg-zinc-50">
+        <Table>
+          <TableHeader>
             <TableRow>
               <TableHead scope="col"></TableHead>
               <TableHead scope="col" className="w-40">
@@ -77,7 +77,7 @@ export function DomainList({ initialDomains }: DomainListProps) {
             {filteredDomains.length > 0 ? (
               filteredDomains.map((domain: Domain, i: number) => (
                 <TableRow key={domain.domain} className="group">
-                  <TableCell className="bg-zinc-50 text-zinc-400 font-mono font-bold px-1.5 text-right group-hover:text-zinc-900 border-r">
+                  <TableCell className="bg-zinc-50 text-zinc-400 font-mono font-bold px-1.5 text-right group-hover:text-zinc-900 border-r transition-colors">
                     {i}
                   </TableCell>
                   <TableCell className="font-semibold">

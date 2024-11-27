@@ -6,7 +6,7 @@ import { Subdomain } from "@/types/subdomain";
 import { auth } from "@clerk/nextjs/server";
 import { asc, eq } from "drizzle-orm";
 import Link from "next/link";
-import { DomainList } from "./domain-list";
+import { DomainList } from "./domains-list";
 import { SubdomainsList } from "./subdomains-list";
 
 export default async function AllDomains() {
